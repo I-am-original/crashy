@@ -4,7 +4,7 @@
 
 /// This is a sample Flutter app that demonstrates how to catch various kinds
 /// of errors in Flutter apps and report them to Sentry.io.
-/// 
+///
 /// Explanations are provided in the inline comments in the code below.
 library crashy;
 
@@ -13,10 +13,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-// This imports the Dart Sentry.io client that sends crash reports to Sentry.io.
 import 'package:sentry/sentry.dart';
 
+import 'd_s_n.dart';
+
+// This imports the Dart Sentry.io client that sends crash reports to Sentry.io.
 // This file does not exist in the repository and is .gitignored. In your local
 // clone of this repository, create this file and add a top-level [String]
 // constant containing the DSN value issued by Sentry.io to your project.
@@ -24,26 +25,25 @@ import 'package:sentry/sentry.dart';
 // This method of supplying DSN is only for demo purposes. In a real app you
 // might want to get it using a more robust method, such as via environment
 // variables, a configuration file or a platform-specific secret key storage.
-import 'dsn.dart';
 
 /// Sentry.io client used to send crash reports (or more generally "events").
-/// 
+///
 /// This client uses the default client parameters. For example, it uses a
 /// plain HTTP client that does not retry failed report attempts and does
 /// not support offline mode. You might want to use a different HTTP client,
 /// one that has these features. Please read the documentation for the
 /// [SentryClient] constructor to learn how you can customize it.
-/// 
+///
 /// [SentryClient.environmentAttributes] are particularly useful in a real
 /// app. Use them to specify attributes of your app that do not change from
 /// one event to another, such as operating system type and version, the
 /// version of Flutter, and [device information][1].
-/// 
+///
 /// [1]: https://github.com/flutter/plugins/tree/master/packages/device_info
 final SentryClient _sentry = new SentryClient(dsn: dsn);
 
 /// Whether the VM is running in debug mode.
-/// 
+///
 /// This is useful to decide whether a report should be sent to sentry. Usually
 /// reports from dev mode are not very useful, as these happen on developers'
 /// workspaces rather than on users' devices in production.
@@ -149,9 +149,11 @@ class MyHomePage extends StatelessWidget {
                 foo() async {
                   throw new StateError('This is an async Dart exception.');
                 }
+
                 bar() async {
                   await foo();
                 }
+
                 await bar();
               },
             ),

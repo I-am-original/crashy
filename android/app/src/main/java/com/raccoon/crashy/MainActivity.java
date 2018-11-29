@@ -1,4 +1,4 @@
-package com.yourcompany.crashy;
+package com.raccoon.crashy;
 
 import android.os.Bundle;
 

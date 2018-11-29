@@ -371,7 +371,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.crashy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raccoon.crashy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -394,7 +394,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.crashy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raccoon.crashy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
